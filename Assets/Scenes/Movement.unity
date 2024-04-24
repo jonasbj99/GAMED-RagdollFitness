@@ -4019,7 +4019,7 @@ Transform:
   m_GameObject: {fileID: 984566447}
   serializedVersion: 2
   m_LocalRotation: {x: 0.14569968, y: 0.6919333, z: -0.14569968, w: 0.6919333}
-  m_LocalPosition: {x: 12.979019, y: 7.9414544, z: -1.2320886}
+  m_LocalPosition: {x: -4.82, y: 0.96, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4038,7 +4038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 7
-  root: {fileID: 457944519}
+  root: {fileID: 1800669826}
   stomachOffset: 0
   hipJoint: {fileID: 909084818}
   stomachJoint: {fileID: 299074713}
@@ -5530,7 +5530,7 @@ Transform:
   m_GameObject: {fileID: 1800669825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.40902, y: -5.3214545, z: 1.2620885}
+  m_LocalPosition: {x: 0.064, y: 1.879, z: 0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
