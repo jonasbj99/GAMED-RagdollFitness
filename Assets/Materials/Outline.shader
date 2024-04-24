@@ -31,6 +31,7 @@ Shader "Custom/chr_outline"{
 
             v2f o;
             o.pos = UnityObjectToClipPos(v.vertex);
+
             return o;
         }
         ENDCG
@@ -78,5 +79,8 @@ Shader "Custom/chr_outline"{
 
             }
         }
+                FallBack "VertexLit"    // Use VertexLit's shadow caster/receiver passes.
+
+
 
 }
