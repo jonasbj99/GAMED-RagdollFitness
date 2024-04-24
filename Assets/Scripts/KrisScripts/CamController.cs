@@ -23,7 +23,7 @@ public class CamController : MonoBehaviour
     {
         CamControl();
     }
-    
+
 
     void CamControl()
 {
