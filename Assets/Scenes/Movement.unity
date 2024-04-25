@@ -1850,7 +1850,7 @@ MonoBehaviour:
   rb: {fileID: 1819724220}
   isLeftorRight: 1
   alreadyGrabbing: 0
-  grab: 0
+  rightGrab: 0
   canGrab: 1
 --- !u!1 &633541579
 GameObject:
@@ -1868,6 +1868,7 @@ GameObject:
   - component: {fileID: 633541584}
   - component: {fileID: 633541586}
   - component: {fileID: 633541587}
+  - component: {fileID: 633541588}
   m_Layer: 6
   m_Name: LeftHand
   m_TagString: Untagged
@@ -2109,7 +2110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633541579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0fb28e286ac1cf4a84d0234e59d1a7c, type: 3}
   m_Name: 
@@ -2118,7 +2119,25 @@ MonoBehaviour:
   rb: {fileID: 1819724220}
   isLeftorRight: 0
   alreadyGrabbing: 0
-  grab: 0
+  rightGrab: 0
+  canGrab: 1
+--- !u!114 &633541588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633541579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c51a3d8ef16b441aeca91dd5527e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 10879722}
+  rb: {fileID: 0}
+  isLeftorRight: 0
+  alreadyGrabbing: 0
+  leftGrab: 0
   canGrab: 1
 --- !u!1 &670446735
 GameObject:
@@ -4061,9 +4080,9 @@ MonoBehaviour:
   stomachJoint: {fileID: 299074713}
   leftShoulder: {fileID: 2065689347}
   rightShoulder: {fileID: 853789754}
-  minRotationX: -90
-  maxRotationX: 90
-  minRotationY: -90
+  minRotationX: 35
+  maxRotationX: 55
+  minRotationY: 0
   maxRotationY: 90
 --- !u!1 &1195934845
 GameObject:
