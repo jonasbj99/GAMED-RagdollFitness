@@ -20,11 +20,14 @@ public class Grab : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(isLeftorRight))
         {
+            
             if(isLeftorRight == 0)
             {
+                alreadyGrabbing = true;
                 animator.SetBool("leftHandUp", true);
             } else if(isLeftorRight == 1)
             {
+                alreadyGrabbing = true;
                 animator.SetBool("rightHandUp", true);
             }
 
@@ -37,6 +40,7 @@ public class Grab : MonoBehaviour
 
         } else if(Input.GetMouseButtonUp(isLeftorRight))
         {
+            alreadyGrabbing = false;
             if(isLeftorRight == 0)
             {
                 animator.SetBool("leftHandUp", false);
