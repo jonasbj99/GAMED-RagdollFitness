@@ -29,6 +29,11 @@ public class MenuBehavior : MonoBehaviour
         StartCoroutine(DelayScene(playScene));
     }
 
+    public void QuitButton()
+    {
+        StartCoroutine(DelayScene(quitScene));
+    }
+
     IEnumerator DelayScene(String scene)
     {
         AnimateButtons();
