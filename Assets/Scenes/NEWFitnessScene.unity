@@ -20798,9 +20798,9 @@ MonoBehaviour:
   stomachJoint: {fileID: 1487345406}
   leftShoulder: {fileID: 2117619485}
   rightShoulder: {fileID: 1897050610}
-  minRotationX: -90
+  minRotationX: 25
   maxRotationX: 90
-  minRotationY: -90
+  minRotationY: 0
   maxRotationY: 90
 --- !u!20 &964696285
 Camera:
