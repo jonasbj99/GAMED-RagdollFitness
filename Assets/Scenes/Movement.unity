@@ -4071,7 +4071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d659b71181ae6458f987e327b0b930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
+  rotationSpeed: 4
   root: {fileID: 1800669826}
   stomachOffset: 0
   hipJoint: {fileID: 909084818}

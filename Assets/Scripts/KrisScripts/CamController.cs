@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
+
+
     public float rotationSpeed = 1;
     public Transform root;
 
@@ -21,6 +23,12 @@ public class CamController : MonoBehaviour
 
     void FixedUpdate()
     {
+        /*GameObject grabScript = GameObject.Find("Grab");
+        if(grabScript != null)
+        {
+
+        }*/
+
         CamControl();
     }
 
@@ -35,14 +43,23 @@ public class CamController : MonoBehaviour
 
     if (Input.GetKey(KeyCode.Z))
     {
+        mouseX += Input.GetAxis("Mouse X") * rotationSpeed; // Horizontal movement controls y-axis rotation
+        mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed; // Vertical movement controls x-axis rotation
+        mouseY = Mathf.Clamp(mouseY, -35, 60);
+
+        Quaternion rootRotation = Quaternion.Euler(0, mouseX, mouseY);
+
         root.rotation = rootRotation;
-    }
-    else
-    {
+        
         root.rotation = rootRotation;
         hipJoint.targetRotation = Quaternion.Euler(0, -mouseX, 0);
-        stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
+
+        /*if(Grab.alreadyGrabbing == false)
+        {
+            stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
+        }*/    
     }
-}
 
 }
+}
+
