@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.W) && isGrounded)
         {
             if(Input.GetKey(KeyCode.LeftShift))
             {
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRun", false);  
         }
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) && isGrounded)
         {
             animator.SetBool("slideLeft", true);
             hips.AddForce(-hips.transform.right * strafeSpeed);
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("slideLeft", false);
         }
 
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.S) && isGrounded)
         {
             animator.SetBool("isWalk", true);
             hips.AddForce(-hips.transform.forward * speed);
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalk", false);
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.D) && isGrounded)
         {      
             animator.SetBool("slideRight", true);
             hips.AddForce(hips.transform.right * strafeSpeed);
