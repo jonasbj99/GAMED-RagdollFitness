@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehavior : MonoBehaviour
 {
-    [SerializeField] float waitSeconds = 3f;
+    [SerializeField] float waitSeconds = 2f;
 
     [SerializeField] Animator playWeightAnimator;
     [SerializeField] Animator settingsWeightAnimator;
@@ -22,7 +22,13 @@ public class MenuBehavior : MonoBehaviour
     [SerializeField] Animator devLogoAnimator;
 
     public GameObject pauseMenu; // Reference to the PauseMenu object in the hierarchy
+    public GameObject MainCamera; // Reference to the PauseMenu object in the hierarchy
 
+
+    private void Start()
+    {
+        StartCoroutine(InMainMenuAnimation());
+    }
     private void Update()
     {
         // Check for Escape key press
@@ -31,14 +37,14 @@ public class MenuBehavior : MonoBehaviour
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        //if (Input.GetKeyDown(KeyCode.X))
         {
-            StartCoroutine(OutMainMenuAnimation());
+            //StartCoroutine(OutMainMenuAnimation());
         }
 
-        if (Input.GetKeyDown (KeyCode.Z)) 
+        //if (Input.GetKeyDown (KeyCode.Z)) 
         { 
-            StartCoroutine(InMainMenuAnimation());
+            //StartCoroutine(InMainMenuAnimation());
         }
     }
 
@@ -123,6 +129,18 @@ public class MenuBehavior : MonoBehaviour
             //SceneManager.LoadScene(scene);
         }
     }
+    public void StartGame()
+    {
+        StartCoroutine(OutMainMenuAnimation());
+
+    }
+
+    public void ResetGame()
+    {
+        StartCoroutine(InMainMenuAnimation());
+        //MainCamera.SetActive(false);
+ 
+    }
 
     void PauseGame()
     {
@@ -166,7 +184,10 @@ public class MenuBehavior : MonoBehaviour
         if (mainCamera != null)
         {
             Debug.Log("Main Camera Found");
-            mainCamera.SetActive(true);
+            MainCamera.SetActive(true);
+            pauseMenu.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         }
         else
         {

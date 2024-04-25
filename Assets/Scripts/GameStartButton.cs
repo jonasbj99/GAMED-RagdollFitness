@@ -14,7 +14,7 @@ public class ButtonController : MonoBehaviour
         GameObject cameraWithCanvas = GameObject.FindGameObjectWithTag("MainCamera");
 
         // Delay the camera disabling by 4 seconds
-        Invoke("DisableCameraWithCanvas", 1f);
+        Invoke("DisableCameraWithCanvas", 2f);
 
         // Spawn a new player prefab
         player.SetActive(true);
@@ -27,7 +27,7 @@ public class ButtonController : MonoBehaviour
     {
         GameObject cameraWithCanvas = GameObject.FindGameObjectWithTag("MainCamera");
 
-        Invoke("EnableCameraWithCanvas", 1f);
+        Invoke("EnableCameraWithCanvas", 2f);
         // Deactivate the player prefab
         player.SetActive(false);
         // Deactivate the player extra prefab
