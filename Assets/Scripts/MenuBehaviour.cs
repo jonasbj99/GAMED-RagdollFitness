@@ -24,6 +24,17 @@ public class MenuBehavior : MonoBehaviour
     [SerializeField] Animator titleAnimator;
     [SerializeField] Animator devLogoAnimator;
 
+    public GameObject pauseMenu; // Reference to the PauseMenu object in the hierarchy
+
+    private void Update()
+    {
+        // Check for Escape key press
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
+
     public void PlayButton()
     {
         StartCoroutine(DelayScene(playScene));
@@ -34,7 +45,7 @@ public class MenuBehavior : MonoBehaviour
         StartCoroutine(DelayScene(quitScene));
     }
 
-    IEnumerator DelayScene(String scene)
+    IEnumerator DelayScene(string scene)
     {
         AnimateButtons();
 
@@ -57,14 +68,68 @@ public class MenuBehavior : MonoBehaviour
         devLogoAnimator.Play("Base Layer.devMoveAnim", 0, 0);
     }
 
-    void SwitchScene(String scene)
+    void SwitchScene(string scene)
     {
         if (scene == "Quit")
         {
             Application.Quit();
         }
-        else {
-            SceneManager.LoadScene(scene);
+        //else
+        {
+            //SceneManager.LoadScene(scene);
         }
     }
+
+    void PauseGame()
+    {
+        // Pause the game
+        //Time.timeScale = 0f;
+
+        // Activate the PauseMenu object
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(true);
+        }
+
+        // Make the cursor visible and unlock it
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    // Method to resume the game
+    public void ResumeGame()
+    {
+        // Set time scale back to normal
+        //Time.timeScale = 1f;
+
+        // Deactivate the PauseMenu object
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
+
+        // Hide and lock the cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    // Method to handle main menu button click
+    public void MainMenuButton()
+    {
+        Debug.Log("Main Menu Button Clicked");
+
+        GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (mainCamera != null)
+        {
+            Debug.Log("Main Camera Found");
+            mainCamera.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Main Camera NOT Found");
+        }
+    }
+
 }
+
+
