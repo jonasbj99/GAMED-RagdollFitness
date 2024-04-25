@@ -9,16 +9,20 @@ public class MenuBehavior : MonoBehaviour
 {
     [SerializeField] float waitSeconds = 2f;
 
-    string playScene = "Movement";
+    string playScene = "NewFitnessScene";
     string settingsScene = "Settings";
     string quitScene = "Quit";
 
-    [SerializeField] Animator playMove;
-    [SerializeField] Animator settingsMove;
-    [SerializeField] Animator quitMove;
-    [SerializeField] Animator playWeight;
-    [SerializeField] Animator settingsWeight;
-    [SerializeField] Animator quitWeight;
+    [SerializeField] Animator playWeightAnimator;
+    [SerializeField] Animator settingsWeightAnimator;
+    [SerializeField] Animator quitWeightAnimator;
+
+    [SerializeField] Animator playButtonAnimator;
+    [SerializeField] Animator settingsButtonAnimator;
+    [SerializeField] Animator quitButtonAnimator;
+
+    [SerializeField] Animator titleAnimator;
+    [SerializeField] Animator devLogoAnimator;
 
     public void PlayButton()
     {
@@ -36,12 +40,16 @@ public class MenuBehavior : MonoBehaviour
 
     void AnimateButtons()
     {
-        playWeight.Play("Base Layer.fastClockwiseAnim", 0, 0);
-        settingsWeight.Play("Base Layer.fastCounterAnim", 0, 0);
-        quitWeight.Play("Base Layer.fastClockwiseAnim", 0, 0);
-        playMove.Play("Base Layer.moveRightAnim", 0, 0);
-        settingsMove.Play("Base Layer.moveLeftAnim", 0, 0);
-        quitMove.Play("Base Layer.moveRightAnim", 0, 0);
+        playWeightAnimator.Play("Base Layer.fastClockwiseAnim", 0, 0);
+        settingsWeightAnimator.Play("Base Layer.fastCounterAnim", 0, 0);
+        quitWeightAnimator.Play("Base Layer.fastClockwiseAnim", 0, 0);
+
+        playButtonAnimator.Play("Base Layer.moveRightAnim", 0, 0);
+        settingsButtonAnimator.Play("Base Layer.moveLeftAnim", 0, 0);
+        quitButtonAnimator.Play("Base Layer.moveRightAnim", 0, 0);
+
+        titleAnimator.Play("Base Layer.titleMoveAnim", 0, 0);
+        devLogoAnimator.Play("Base Layer.devMoveAnim", 0, 0);
     }
 
     void SwitchScene(String scene)
