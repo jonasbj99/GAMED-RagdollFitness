@@ -17,14 +17,14 @@ public class BarbellColliderScript : MonoBehaviour
             if (other.transform.position == waypoint1.position)
             {
                 Debug.Log("Waypoint 1 reached!");
-                StrengthBar.currentStrength++;
+                StrengthBar.currentStrength+=3;
                 waypoint1object.SetActive(false);
                 waypoint2object.SetActive(true);
             }
             else if (other.transform.position == waypoint2.position)
             {
                 Debug.Log("Waypoint 2 reached!");
-                StrengthBar.currentStrength++;
+                StrengthBar.currentStrength+=3;
                 waypoint2object.SetActive(false);
                 waypoint1object.SetActive(true);
             }

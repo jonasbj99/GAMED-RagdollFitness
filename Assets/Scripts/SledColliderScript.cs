@@ -17,14 +17,14 @@ public class SledColliderScript : MonoBehaviour
             if (other.transform.position == waypoint1.position)
             {
                 Debug.Log("Waypoint 1 reached!");
-                StrengthBar.currentStrength++;
+                StrengthBar.currentStrength+=5;
                 waypoint1object.SetActive(true);
                 waypoint2object.SetActive(false);
             }
             else if (other.transform.position == waypoint2.position)
             {
                 Debug.Log("Waypoint 2 reached!");
-                StrengthBar.currentStrength++;
+                StrengthBar.currentStrength+=5;
                 waypoint2object.SetActive(true);
                 waypoint1object.SetActive(false);
             }
