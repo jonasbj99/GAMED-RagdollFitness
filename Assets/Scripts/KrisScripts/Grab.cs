@@ -24,10 +24,14 @@ public class Grab : MonoBehaviour
             
             if(isLeftorRight == 0)
             {
-                animator.SetBool("leftHandUp", true);
+                //animator.SetBool("leftHandUp", true);
+
+                
+
             } else if(isLeftorRight == 1)
             {
-                animator.SetBool("rightHandUp", true);
+                //animator.SetBool("rightHandUp", true);
+
             }
 
             if(grabbedObj != null && !grabbedObj.GetComponent<FixedJoint>())
@@ -42,12 +46,12 @@ public class Grab : MonoBehaviour
             
             if(isLeftorRight == 0)
             {
-                animator.SetBool("leftHandUp", false);
+                //animator.SetBool("leftHandUp", false);
+
             } else if(isLeftorRight == 1)
             {
-                animator.SetBool("rightHandUp", false);
-            }
-
+                //animator.SetBool("rightHandUp", false);
+            }    
             if(grabbedObj != null)
             {
                 Destroy(grabbedObj.GetComponent<FixedJoint>());
