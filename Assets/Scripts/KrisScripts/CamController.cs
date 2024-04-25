@@ -14,6 +14,14 @@ public class CamController : MonoBehaviour
     public float stomachOffset;
 
     public ConfigurableJoint hipJoint, stomachJoint;
+
+
+    public Transform cameraTarget; // The point in front of the character where the camera should point
+    public Transform leftHand, rightHand; // The hands of the character
+
+    public float handSpeed = 5f; // Speed at which hands move towards the target
+    public float handDistance = 1f; // Distance from the character to the hands
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +33,13 @@ public class CamController : MonoBehaviour
     {
         CamControl();
 
-        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        /*if(Input.GetMouseButtonDown(0))
         {
             isGrabbing = true;
-        }
+            MoveHand(leftHand);
+        } */
         
-        if(Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
+        /*if(Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
         {
             isGrabbing = false;
         }
@@ -38,7 +47,7 @@ public class CamController : MonoBehaviour
         if(isGrabbing == true)
         {
         
-        }
+        }*/
     }
 
 
@@ -57,7 +66,7 @@ public class CamController : MonoBehaviour
             
         stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
         
-
+        
         /*if (Input.GetKey(KeyCode.Z))
         {
             mouseX += Input.GetAxis("Mouse X") * rotationSpeed; // Horizontal movement controls y-axis rotation
@@ -77,6 +86,18 @@ public class CamController : MonoBehaviour
             }    
         }*/
 
+    }
+
+    void MoveHand(Transform hand)
+    {
+        // Calculate target position based on camera target and hand distance
+        Vector3 targetPosition = cameraTarget.position + cameraTarget.forward * handDistance;
+
+        // Move the hand towards the target position
+        hand.position = Vector3.Lerp(hand.position, targetPosition, handSpeed * Time.deltaTime);
+
+        // Rotate the hand to look at the camera target
+        hand.LookAt(cameraTarget);
     }
 }
 
