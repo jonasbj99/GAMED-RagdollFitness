@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-    bool isGrabbing = false;
+    // bool isGrabbing = false;
 
     public float rotationSpeed = 1;
     public Transform root;
@@ -13,7 +13,12 @@ public class CamController : MonoBehaviour
 
     public float stomachOffset;
 
-    public ConfigurableJoint hipJoint, stomachJoint;
+    public ConfigurableJoint hipJoint, stomachJoint, leftShoulder, rightShoulder;
+
+    public float minRotationX = 45f;
+    public float maxRotationX = 60f;
+    public float minRotationY = 45f;
+    public float maxRotationY = 60f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +47,12 @@ public class CamController : MonoBehaviour
         hipJoint.targetRotation = Quaternion.Euler(0, -mouseX, 0);    
             
         stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
+
+        float clampedMouseX = Mathf.Clamp(mouseX, minRotationX, maxRotationX);
+        float clampedMouseY = Mathf.Clamp(mouseY, minRotationY, maxRotationY);
+
+        leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -clampedMouseY);
+        rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -clampedMouseY); 
         
         
         /*if (Input.GetKey(KeyCode.Z))
