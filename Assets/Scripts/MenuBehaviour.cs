@@ -2,16 +2,13 @@ using OpenCover.Framework.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuBehavior : MonoBehaviour
 {
-    [SerializeField] float waitSeconds = 2f;
-
-    string playScene = "NewFitnessScene";
-    string settingsScene = "Settings";
-    string quitScene = "Quit";
+    [SerializeField] float waitSeconds = 3f;
 
     [SerializeField] Animator playWeightAnimator;
     [SerializeField] Animator settingsWeightAnimator;
@@ -33,28 +30,37 @@ public class MenuBehavior : MonoBehaviour
         {
             PauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine(OutMainMenuAnimation());
+        }
+
+        if (Input.GetKeyDown (KeyCode.Z)) 
+        { 
+            StartCoroutine(InMainMenuAnimation());
+        }
     }
 
-    public void PlayButton()
+    IEnumerator OutMainMenuAnimation()
     {
-        StartCoroutine(DelayScene(playScene));
-    }
-
-    public void QuitButton()
-    {
-        StartCoroutine(DelayScene(quitScene));
-    }
-
-    IEnumerator DelayScene(string scene)
-    {
-        AnimateButtons();
+        OutAnimateButtons();
 
         yield return new WaitForSeconds(waitSeconds);
 
-        //SwitchScene(scene);
+        OutStaticButtons();
     }
 
-    void AnimateButtons()
+    IEnumerator InMainMenuAnimation()
+    {
+        InAnimateButtons();
+
+        yield return new WaitForSeconds(waitSeconds);
+
+        InStaticButtons();
+    }
+
+    void OutAnimateButtons()
     {
         playWeightAnimator.Play("Base Layer.fastClockwiseAnim", 0, 0);
         settingsWeightAnimator.Play("Base Layer.fastCounterAnim", 0, 0);
@@ -66,6 +72,44 @@ public class MenuBehavior : MonoBehaviour
 
         titleAnimator.Play("Base Layer.titleMoveAnim", 0, 0);
         devLogoAnimator.Play("Base Layer.devMoveAnim", 0, 0);
+    }
+
+    void OutStaticButtons()
+    {
+        playButtonAnimator.Play("Base Layer.revStaticRightAnim", 0, 0);
+        settingsButtonAnimator.Play("Base Layer.revStaticLeftAnim", 0, 0);
+        quitButtonAnimator.Play("Base Layer.revStaticRightAnim", 0, 0);
+
+        titleAnimator.Play("Base Layer.revStaticTitleAnim", 0, 0);
+        devLogoAnimator.Play("Base Layer.revStaticDevAnim", 0, 0);
+    }
+
+    void InAnimateButtons()
+    {
+        playWeightAnimator.Play("Base Layer.fastCounterAnim", 0, 0);
+        settingsWeightAnimator.Play("Base Layer.fastClockwiseAnim", 0, 0);
+        quitWeightAnimator.Play("Base Layer.fastCounterAnim", 0, 0);
+
+        playButtonAnimator.Play("Base Layer.reverseRightAnim", 0, 0);
+        settingsButtonAnimator.Play("Base Layer.reverseLeftAnim", 0, 0);
+        quitButtonAnimator.Play("Base Layer.reverseRightAnim", 0, 0);
+
+        titleAnimator.Play("Base Layer.reverseTitleAnim", 0, 0);
+        devLogoAnimator.Play("Base Layer.reverseDevAnim", 0, 0);
+    }
+
+    void InStaticButtons()
+    {
+        playWeightAnimator.Play("Base Layer.clockwiseAnim", 0, 0);
+        settingsWeightAnimator.Play("Base Layer.counterAnim", 0, 0);
+        quitWeightAnimator.Play("Base Layer.clockwiseAnim", 0, 0);
+
+        playButtonAnimator.Play("Base Layer.staticRightAnim", 0, 0);
+        settingsButtonAnimator.Play("Base Layer.staticLeftAnim", 0, 0);
+        quitButtonAnimator.Play("Base Layer.staticRightAnim", 0, 0);
+
+        titleAnimator.Play("Base Layer.staticTitleAnim", 0, 0);
+        devLogoAnimator.Play("Base Layer.staticDevAnim", 0, 0);
     }
 
     void SwitchScene(string scene)

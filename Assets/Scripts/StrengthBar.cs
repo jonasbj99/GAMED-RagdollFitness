@@ -10,13 +10,31 @@ public class StrengthBar : MonoBehaviour
     [SerializeField] GameObject weightFollow;
     [SerializeField] GameObject weightSprite;
 
-    int currentStrength = 0;
+    int currentStrength;
+    int startStrength = 0;
+    int maxStrength = 10;
+
+    private void Start()
+    {
+        currentStrength = startStrength;
+        strengthSlider.maxValue = maxStrength;
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             currentStrength++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            currentStrength = 0;
+        }
+
+        if (Input.GetKeyDown (KeyCode.X)) 
+        {
+            maxStrength += 5;
         }
 
         SetStrength(currentStrength);
@@ -26,6 +44,7 @@ public class StrengthBar : MonoBehaviour
 
     void SetStrength(int strValue)
     {
+        strengthSlider.maxValue = maxStrength;
         strengthSlider.value = strValue;
     }
 }
