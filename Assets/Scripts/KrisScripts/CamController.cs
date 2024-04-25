@@ -48,11 +48,11 @@ public class CamController : MonoBehaviour
             
         stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
 
-        float clampedMouseX = Mathf.Clamp(mouseX, minRotationX, maxRotationX);
+        float clampedMouseX = Mathf.Clamp(mouseX, 55, 125);
         float clampedMouseY = Mathf.Clamp(mouseY, minRotationY, maxRotationY);
 
-        leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -clampedMouseY);
-        rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -clampedMouseY); 
+        leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -mouseY);
+        rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -mouseY); 
         
         
         /*if (Input.GetKey(KeyCode.Z))
