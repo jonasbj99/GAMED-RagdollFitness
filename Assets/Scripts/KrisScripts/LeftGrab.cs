@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grab : MonoBehaviour
+public class LeftGrab : MonoBehaviour
 {
     public Animator animator;
     GameObject grabbedObj;
@@ -10,7 +10,7 @@ public class Grab : MonoBehaviour
     public int isLeftorRight;
     
     public bool alreadyGrabbing = false;
-    public bool rightGrab = false;
+    public bool leftGrab = false;
     public bool canGrab = true;
 
     // Start is called before the first frame update
@@ -24,13 +24,13 @@ public class Grab : MonoBehaviour
     {
         if (canGrab)
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0))
             {
-                rightGrab = true;
+                leftGrab = true;
             }
-            else
+             else
             {
-                rightGrab = false;
+                leftGrab = false;
                 Destroy(GetComponent<FixedJoint>());
             }
             
@@ -83,7 +83,7 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (rightGrab && col.transform.tag != "Player")
+        if (leftGrab && col.transform.tag != "Player")
         {
             Rigidbody rb = col.transform.GetComponent<Rigidbody>();
             if (rb != null)
