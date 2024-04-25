@@ -575,6 +575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1111,6 +1115,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2209,6 +2217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sled
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8a39fef22797914faff578cace11563, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 1117316290510728531, guid: f8a39fef22797914faff578cace11563, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2507,12 +2519,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188817421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.32, y: 10.8, z: -27.66}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.6531256, y: 0.2709741, z: 0.2709741, w: 0.6531256}
+  m_LocalPosition: {x: -0.001628449, y: -0.002861817, z: 0.009702002}
+  m_LocalScale: {x: 0.00248133, y: 0.0024813302, z: 0.00248133}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 204316731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190659019
 GameObject:
@@ -2996,16 +3008,26 @@ PrefabInstance:
       value: uploads_files_2698628_PA_Speakers
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 188817423}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 204316730}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 204316732}
   m_SourcePrefab: {fileID: 100100000, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
 --- !u!1 &204316729 stripped
 GameObject:
@@ -3033,6 +3055,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01918396, y: 0.016450282, z: 0.03515975}
   m_Center: {x: 0, y: 0.0017748565, z: 0.016774531}
+--- !u!4 &204316731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 691bf1c04122fb34a909f8ea87f12c4c, type: 3}
+  m_PrefabInstance: {fileID: 204316728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &204316732
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204316729}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &206694506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5519,6 +5573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5666,6 +5724,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6438,6 +6500,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8242,6 +8308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8928,6 +8998,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11992,6 +12066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13408,6 +13486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bench
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 1692548011261542243, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13424,6 +13506,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 878619982}
     - targetCorrespondingSourceObject: {fileID: 3062356789946986644, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
       insertIndex: -1
       addedObject: {fileID: 878619980}
@@ -13485,6 +13570,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1926403951900781465, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
+--- !u!1 &878619981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 660e75f09b9f5c6479c3ab4cc6065441, type: 3}
+  m_PrefabInstance: {fileID: 878619976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &878619982
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878619981}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &879519761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13724,6 +13841,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15389,6 +15510,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17440,6 +17565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barbell (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 3678010604884230927, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.002
@@ -17758,6 +17887,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18678,6 +18811,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
       propertyPath: m_Name
       value: Barbell
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 3678010604884230927, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19629,6 +19766,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20755,6 +20896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21663,6 +21808,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
       propertyPath: m_Name
       value: Barbell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 8671684695005279789, guid: a5a4edb489932ba4e828da1d6c199d6e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27679,6 +27828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28959,6 +29112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29168,6 +29325,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30788,6 +30949,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
       propertyPath: m_Name
       value: kettlebell (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33030,6 +33195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kettlebell (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7392137dd6d9d7146a607997e077e67a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33056,5 +33225,4 @@ SceneRoots:
   - {fileID: 982764149}
   - {fileID: 400383021}
   - {fileID: 1562393556}
-  - {fileID: 188817423}
   - {fileID: 204316728}
