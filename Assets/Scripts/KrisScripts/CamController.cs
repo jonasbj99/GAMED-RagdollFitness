@@ -31,7 +31,7 @@ public class CamController : MonoBehaviour
     mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed; // Vertical movement controls x-axis rotation
     mouseY = Mathf.Clamp(mouseY, -35, 60);
 
-    Quaternion rootRotation = Quaternion.Euler(mouseY, mouseX, 0);
+    Quaternion rootRotation = Quaternion.Euler(0, mouseX, mouseY);
 
     if (Input.GetKey(KeyCode.Z))
     {
@@ -41,7 +41,7 @@ public class CamController : MonoBehaviour
     {
         root.rotation = rootRotation;
         hipJoint.targetRotation = Quaternion.Euler(0, -mouseX, 0);
-        stomachJoint.targetRotation = Quaternion.Euler(-mouseY + stomachOffset, 0, 0);
+        stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
     }
 }
 
