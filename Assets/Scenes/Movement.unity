@@ -4080,8 +4080,8 @@ MonoBehaviour:
   stomachJoint: {fileID: 299074713}
   leftShoulder: {fileID: 2065689347}
   rightShoulder: {fileID: 853789754}
-  minRotationX: 35
-  maxRotationX: 55
+  minRotationX: 25
+  maxRotationX: 90
   minRotationY: 0
   maxRotationY: 90
 --- !u!1 &1195934845
