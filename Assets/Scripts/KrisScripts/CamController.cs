@@ -28,7 +28,7 @@ public class CamController : MonoBehaviour
     void CamControl()
 {
     mouseX += Input.GetAxis("Mouse X") * rotationSpeed; // Horizontal movement controls y-axis rotation
-    mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed; // Vertical movement controls x-axis rotation
+    mouseY += Input.GetAxis("Mouse Y") * rotationSpeed; // Vertical movement controls x-axis rotation
     mouseY = Mathf.Clamp(mouseY, -35, 60);
 
     Quaternion rootRotation = Quaternion.Euler(0, mouseX, mouseY);
