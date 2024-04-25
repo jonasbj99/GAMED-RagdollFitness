@@ -433,6 +433,7 @@ MonoBehaviour:
   titleAnimator: {fileID: 1264153218}
   devLogoAnimator: {fileID: 102476442}
   pauseMenu: {fileID: 0}
+  MainCamera: {fileID: 0}
 --- !u!1 &190433421
 GameObject:
   m_ObjectHideFlags: 0
