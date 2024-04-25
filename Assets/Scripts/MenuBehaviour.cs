@@ -35,7 +35,7 @@ public class MenuBehavior : MonoBehaviour
 
         yield return new WaitForSeconds(waitSeconds);
 
-        SwitchScene(scene);
+        //SwitchScene(scene);
     }
 
     void AnimateButtons()
