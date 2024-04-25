@@ -15,6 +15,11 @@ public class CamController : MonoBehaviour
 
     public ConfigurableJoint hipJoint, stomachJoint, leftShoulder, rightShoulder;
 
+    public float minRotationX = -45f;
+    public float maxRotationX = -90f;
+    public float minRotationY = 45f;
+    public float maxRotationY = 135f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +48,11 @@ public class CamController : MonoBehaviour
             
         stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
 
-        leftShoulder.targetRotation = Quaternion.Euler(0, -mouseX, -mouseY);
-        rightShoulder.targetRotation = Quaternion.Euler(0, -mouseX -180, -mouseY); 
+        float clampedMouseX = Mathf.Clamp(mouseX, minRotationX, maxRotationX);
+        float clampedMouseY = Mathf.Clamp(mouseY, minRotationY, maxRotationY);
+
+        leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -clampedMouseY);
+        rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -clampedMouseY); 
         
         
         /*if (Input.GetKey(KeyCode.Z))
