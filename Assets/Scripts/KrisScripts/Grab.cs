@@ -9,11 +9,11 @@ public class Grab : MonoBehaviour
     public Rigidbody rb;
     public int isLeftorRight;
     public bool alreadyGrabbing = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        rb= GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -24,11 +24,9 @@ public class Grab : MonoBehaviour
             
             if(isLeftorRight == 0)
             {
-                alreadyGrabbing = true;
                 animator.SetBool("leftHandUp", true);
             } else if(isLeftorRight == 1)
             {
-                alreadyGrabbing = true;
                 animator.SetBool("rightHandUp", true);
             }
 
@@ -41,7 +39,7 @@ public class Grab : MonoBehaviour
 
         } else if(Input.GetMouseButtonUp(isLeftorRight))
         {
-            alreadyGrabbing = false;
+            
             if(isLeftorRight == 0)
             {
                 animator.SetBool("leftHandUp", false);
