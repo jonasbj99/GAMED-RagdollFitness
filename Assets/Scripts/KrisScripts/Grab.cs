@@ -9,6 +9,7 @@ public class Grab : MonoBehaviour
     public Rigidbody rb;
     public int isLeftorRight;
     public bool alreadyGrabbing = false;
+    
     // Start is called before the first frame update
     void Start()
     {
