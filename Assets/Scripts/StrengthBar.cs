@@ -12,7 +12,7 @@ public class StrengthBar : MonoBehaviour
 
     [SerializeField] GameObject[] rankArray;
 
-    int currentStrength;
+    public static int currentStrength;
     int startStrength = 0;
     int maxStrength = 10;
     int currentRank = 1;
@@ -31,9 +31,9 @@ public class StrengthBar : MonoBehaviour
             rankUp();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        //if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            currentStrength += 7;
+           // currentStrength += 7;
         }
 
         SetSlider();

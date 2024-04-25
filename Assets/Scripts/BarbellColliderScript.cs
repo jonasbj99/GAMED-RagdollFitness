@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SledColliderScript : MonoBehaviour
+public class BarbellColliderScript : MonoBehaviour
 {
     public Transform waypoint1;
     public Transform waypoint2;
@@ -12,21 +12,21 @@ public class SledColliderScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Sled"))
+        if (other.gameObject.CompareTag("Barbell"))
         {
             if (other.transform.position == waypoint1.position)
             {
                 Debug.Log("Waypoint 1 reached!");
                 StrengthBar.currentStrength++;
-                waypoint1object.SetActive(true);
-                waypoint2object.SetActive(false);
+                waypoint1object.SetActive(false);
+                waypoint2object.SetActive(true);
             }
             else if (other.transform.position == waypoint2.position)
             {
                 Debug.Log("Waypoint 2 reached!");
                 StrengthBar.currentStrength++;
-                waypoint2object.SetActive(true);
-                waypoint1object.SetActive(false);
+                waypoint2object.SetActive(false);
+                waypoint1object.SetActive(true);
             }
 
             Debug.Log("Score: " + score);

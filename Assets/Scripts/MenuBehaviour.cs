@@ -1,4 +1,4 @@
-using OpenCover.Framework.Model;
+//using OpenCover.Framework.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehavior : MonoBehaviour
 {
-    [SerializeField] float waitSeconds = 2f;
+    [SerializeField] float waitSeconds = 4f;
 
     [SerializeField] Animator playWeightAnimator;
     [SerializeField] Animator settingsWeightAnimator;
