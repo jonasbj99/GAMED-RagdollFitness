@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BellTouchDetection : MonoBehaviour
 {
+    [SerializeField] AudioSource strengthAudio;
+
     public float scoreIncrementInterval = 5f; // Interval to increment the score
     private float timer = 0f; // Timer to track the time
 
@@ -25,6 +27,7 @@ public class BellTouchDetection : MonoBehaviour
                     // Increment the score
                     StrengthBar.currentStrength+=2;
                     Debug.Log("Score incremented: " + StrengthBar.currentStrength);
+                    strengthAudio.Play();
                     break; // Exit the loop if a bell is found
                 }
             }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SledColliderScript : MonoBehaviour
 {
+    [SerializeField] AudioSource strengthAudio;
+
     public Transform waypoint1;
     public Transform waypoint2;
 
@@ -20,6 +22,7 @@ public class SledColliderScript : MonoBehaviour
                 StrengthBar.currentStrength+=5;
                 waypoint1object.SetActive(true);
                 waypoint2object.SetActive(false);
+                strengthAudio.Play();
             }
             else if (other.transform.position == waypoint2.position)
             {
@@ -27,6 +30,7 @@ public class SledColliderScript : MonoBehaviour
                 StrengthBar.currentStrength+=5;
                 waypoint2object.SetActive(true);
                 waypoint1object.SetActive(false);
+                strengthAudio.Play();
             }
 
             Debug.Log("Score: " + score);

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BarbellColliderScript : MonoBehaviour
 {
+    [SerializeField] AudioSource strengthAudio;
+
     public Transform waypoint1;
     public Transform waypoint2;
 
@@ -20,6 +22,7 @@ public class BarbellColliderScript : MonoBehaviour
                 StrengthBar.currentStrength+=3;
                 waypoint1object.SetActive(false);
                 waypoint2object.SetActive(true);
+                strengthAudio.Play();
             }
             else if (other.transform.position == waypoint2.position)
             {
@@ -27,6 +30,7 @@ public class BarbellColliderScript : MonoBehaviour
                 StrengthBar.currentStrength+=3;
                 waypoint2object.SetActive(false);
                 waypoint1object.SetActive(true);
+                strengthAudio.Play();
             }
 
             Debug.Log("Score: " + score);

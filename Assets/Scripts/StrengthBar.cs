@@ -12,6 +12,8 @@ public class StrengthBar : MonoBehaviour
 
     [SerializeField] GameObject[] rankArray;
 
+    [SerializeField] AudioSource rankAudio;
+
     public static int currentStrength;
     int startStrength = 0;
     int maxStrength = 10;
@@ -50,6 +52,7 @@ public class StrengthBar : MonoBehaviour
             maxStrength += 5;
 
             rankChange();
+            rankAudio.Play();
         }
     }
 
