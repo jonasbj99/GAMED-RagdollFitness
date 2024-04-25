@@ -9,7 +9,7 @@ public class MenuBehavior : MonoBehaviour
 {
     [SerializeField] float waitSeconds = 2f;
 
-    string playScene = "Movement";
+    string playScene = "NewFitnessScene";
     string settingsScene = "Settings";
     string quitScene = "Quit";
 
