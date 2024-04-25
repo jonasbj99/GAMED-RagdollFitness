@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     public Rigidbody hips;
+
+    public float raycastDistance = 2f;
+    public LayerMask groundLayer;
     public bool isGrounded;
 
     // Start is called before the first frame update
@@ -71,13 +74,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("slideRight", false);
         }
 
-        if(Input.GetAxis("Jump") > 0)
+        // Check if the player is grounded
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, raycastDistance, groundLayer);
+
+        // Jump input
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            if(isGrounded)
-            {
-                hips.AddForce(new Vector3(0, jumpForce, 0));
-                isGrounded = false;
-            }
+            // Apply jump force if grounded and Space key is pressed
+            hips.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
     }
 

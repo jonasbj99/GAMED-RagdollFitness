@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LimbCollision : MonoBehaviour
 {
-   public PlayerController playerController;
+   /*public PlayerController playerController;
 
 
    void Start()
@@ -15,5 +15,5 @@ public class LimbCollision : MonoBehaviour
    private void OnCollisionEnter(Collision other) 
    {
         playerController.isGrounded = true;
-   }
+   }*/
 }
