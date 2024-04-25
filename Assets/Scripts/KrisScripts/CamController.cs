@@ -15,10 +15,10 @@ public class CamController : MonoBehaviour
 
     public ConfigurableJoint hipJoint, stomachJoint, leftShoulder, rightShoulder;
 
-    public float minRotationX = -45f;
-    public float maxRotationX = -90f;
+    public float minRotationX = 45f;
+    public float maxRotationX = 60f;
     public float minRotationY = 45f;
-    public float maxRotationY = 135f;
+    public float maxRotationY = 60f;
 
     // Start is called before the first frame update
     void Start()

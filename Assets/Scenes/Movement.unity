@@ -4082,6 +4082,10 @@ MonoBehaviour:
   stomachJoint: {fileID: 299074713}
   leftShoulder: {fileID: 2065689347}
   rightShoulder: {fileID: 853789754}
+  minRotationX: -90
+  maxRotationX: 90
+  minRotationY: -90
+  maxRotationY: 90
 --- !u!1 &1195934845
 GameObject:
   m_ObjectHideFlags: 0
