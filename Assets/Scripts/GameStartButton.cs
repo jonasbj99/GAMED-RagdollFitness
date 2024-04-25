@@ -14,7 +14,7 @@ public class ButtonController : MonoBehaviour
         GameObject cameraWithCanvas = GameObject.FindGameObjectWithTag("MainCamera");
 
         // Delay the deletion by 2 seconds
-        Invoke("DeleteCameraWithCanvas", 2f);
+        Invoke("DeleteCameraWithCanvas", 4f);
 
         // Spawn a new player prefab
         player.SetActive(true);
