@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5984767, g: 0.54319465, b: 0.78464794, a: 1}
+  m_IndirectSpecularColor: {r: 0.61061746, g: 0.56451756, b: 0.78259885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14404,6 +14404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625007535}
   - component: {fileID: 625007536}
+  - component: {fileID: 625007537}
   m_Layer: 0
   m_Name: Teaser
   m_TagString: Untagged
@@ -14420,7 +14421,7 @@ Transform:
   m_GameObject: {fileID: 625007534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 683, y: -439, z: -0}
+  m_LocalPosition: {x: 683, y: -439, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -14478,6 +14479,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &625007537
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625007534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a3c34250f2b87742971da4ce3dec47e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &625395369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22775,6 +22797,7 @@ MonoBehaviour:
   quitButtonAnimator: {fileID: 1449129350}
   titleAnimator: {fileID: 1827478159}
   devLogoAnimator: {fileID: 360348534}
+  teaserAnimator: {fileID: 625007537}
   pauseMenu: {fileID: 1620431072}
   MainCamera: {fileID: 613675997}
 --- !u!4 &1045817012

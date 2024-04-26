@@ -21,6 +21,8 @@ public class MenuBehavior : MonoBehaviour
     [SerializeField] Animator titleAnimator;
     [SerializeField] Animator devLogoAnimator;
 
+    [SerializeField] Animator teaserAnimator;
+
     public GameObject pauseMenu; // Reference to the PauseMenu object in the hierarchy
     public GameObject MainCamera; // Reference to the PauseMenu object in the hierarchy
 
@@ -78,6 +80,7 @@ public class MenuBehavior : MonoBehaviour
 
         titleAnimator.Play("Base Layer.titleMoveAnim", 0, 0);
         devLogoAnimator.Play("Base Layer.devMoveAnim", 0, 0);
+        teaserAnimator.Play("Base Layer.outAnim", 0, 0);
     }
 
     void OutStaticButtons()
@@ -88,6 +91,7 @@ public class MenuBehavior : MonoBehaviour
 
         titleAnimator.Play("Base Layer.revStaticTitleAnim", 0, 0);
         devLogoAnimator.Play("Base Layer.revStaticDevAnim", 0, 0);
+        teaserAnimator.Play("Base Layer.staticOutAnim", 0, 0);
     }
 
     void InAnimateButtons()
@@ -102,6 +106,7 @@ public class MenuBehavior : MonoBehaviour
 
         titleAnimator.Play("Base Layer.reverseTitleAnim", 0, 0);
         devLogoAnimator.Play("Base Layer.reverseDevAnim", 0, 0);
+        teaserAnimator.Play("Base Layer.inAnim", 0, 0);
     }
 
     void InStaticButtons()
@@ -116,6 +121,7 @@ public class MenuBehavior : MonoBehaviour
 
         titleAnimator.Play("Base Layer.staticTitleAnim", 0, 0);
         devLogoAnimator.Play("Base Layer.staticDevAnim", 0, 0);
+        teaserAnimator.Play("Base Layer.staticInAnim", 0, 0);
     }
 
     public void QuitGame()
