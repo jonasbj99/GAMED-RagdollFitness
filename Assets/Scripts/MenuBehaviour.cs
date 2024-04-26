@@ -118,9 +118,8 @@ public class MenuBehavior : MonoBehaviour
         devLogoAnimator.Play("Base Layer.staticDevAnim", 0, 0);
     }
 
-    void SwitchScene(string scene)
+    public void QuitGame()
     {
-        if (scene == "Quit")
         {
             Application.Quit();
         }
