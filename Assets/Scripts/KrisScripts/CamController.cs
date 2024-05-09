@@ -15,10 +15,10 @@ public class CamController : MonoBehaviour
 
     public ConfigurableJoint hipJoint, stomachJoint, leftShoulder, rightShoulder;
 
-    public float minRotationX = 0f;
-    public float maxRotationX = 1f;
-    public float minRotationY = 45f;
-    public float maxRotationY = 60f;
+    public float minRotationX = 30f;
+    public float maxRotationX = 45f;
+    public float minRotationY = 0f;
+    public float maxRotationY = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class CamController : MonoBehaviour
     {
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed; // Horizontal movement controls y-axis rotation
         mouseY += Input.GetAxis("Mouse Y") * rotationSpeed; // Vertical movement controls x-axis rotation
-        mouseY = Mathf.Clamp(mouseY, -60, 60);
+        mouseY = Mathf.Clamp(mouseY, -35, 60);
 
         Quaternion rootRotation = Quaternion.Euler(0, mouseX, mouseY);
 
@@ -48,11 +48,15 @@ public class CamController : MonoBehaviour
             
         stomachJoint.targetRotation = Quaternion.Euler(0, 0, -mouseY + stomachOffset);
 
-        float clampedMouseX = Mathf.Clamp(mouseX, 55, 125);
+        
+        float clampedMouseX = Mathf.Clamp(mouseX, minRotationX, maxRotationX);
         float clampedMouseY = Mathf.Clamp(mouseY, minRotationY, maxRotationY);
 
-        leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -mouseY);
-        rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -mouseY); 
+        // leftShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX, -mouseY);
+        // rightShoulder.targetRotation = Quaternion.Euler(0, -clampedMouseX -180, -mouseY); 
+
+        leftShoulder.targetRotation = Quaternion.Euler(0, -90, -mouseY);
+        rightShoulder.targetRotation = Quaternion.Euler(0, 90, -mouseY); 
         
         
         /*if (Input.GetKey(KeyCode.Z))

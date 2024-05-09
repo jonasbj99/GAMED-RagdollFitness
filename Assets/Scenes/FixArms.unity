@@ -21675,7 +21675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d659b71181ae6458f987e327b0b930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 4
+  rotationSpeed: 3
   root: {fileID: 42547155}
   stomachOffset: 0
   hipJoint: {fileID: 910691050}
@@ -33920,7 +33920,6 @@ GameObject:
   - component: {fileID: 1480377167}
   - component: {fileID: 1480377165}
   - component: {fileID: 1480377164}
-  - component: {fileID: 1480377169}
   m_Layer: 1
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -34071,14 +34070,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1823482793}
   m_LocalEulerAnglesHint: {x: -2.6, y: 148.69, z: 0}
---- !u!81 &1480377169
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480377163}
-  m_Enabled: 1
 --- !u!1001 &1481245355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45369,6 +45360,7 @@ MonoBehaviour:
   - {fileID: 1315524220}
   - {fileID: 2099501718}
   - {fileID: 1493321128}
+  scaleObjects: []
   rankAudio: {fileID: 2056090599}
 --- !u!114 &1967148303
 MonoBehaviour:
