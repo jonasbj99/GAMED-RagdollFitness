@@ -11,6 +11,7 @@ public class StrengthBar : MonoBehaviour
     [SerializeField] GameObject weightSprite;
 
     [SerializeField] GameObject[] rankArray;
+    [SerializeField] GameObject[] scaleObjects; // Array to hold game objects whose scales will increase
 
     [SerializeField] AudioSource rankAudio;
 
@@ -35,7 +36,7 @@ public class StrengthBar : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.Space)) 
         {
-           // currentStrength += 7;
+            // currentStrength += 7;
         }
 
         SetSlider();
@@ -52,6 +53,7 @@ public class StrengthBar : MonoBehaviour
             maxStrength += 5;
 
             rankChange();
+            adjustScale(); // Call method to adjust scale of game objects
             rankAudio.Play();
         }
     }
@@ -63,12 +65,23 @@ public class StrengthBar : MonoBehaviour
             rankArray[i].SetActive(false);
         }
 
-        rankArray[currentRank-1].SetActive(true);
+        rankArray[currentRank - 1].SetActive(true);
     }
 
     void SetSlider()
     {
         strengthSlider.maxValue = maxStrength;
         strengthSlider.value = currentStrength;
+    }
+
+    void adjustScale()
+    {
+        // Increase the scale of each object slightly
+        foreach (GameObject obj in scaleObjects)
+        {
+            Vector3 currentScale = obj.transform.localScale;
+            currentScale *= 1.03f; // Increase scale by 10%
+            obj.transform.localScale = currentScale;
+        }
     }
 }
