@@ -82,6 +82,19 @@ public class StrengthBar : MonoBehaviour
             Vector3 currentScale = obj.transform.localScale;
             currentScale *= 1.03f; // Increase scale by 10%
             obj.transform.localScale = currentScale;
+
+            Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
+            if (rigidbody != null)
+            {
+                // Assuming each object has a configurable joint
+                ConfigurableJoint joint = obj.GetComponent<ConfigurableJoint>();
+                if (joint != null && joint.connectedBody != null)
+                {
+                    // Adjust mass scale of the joint
+                    joint.massScale = joint.connectedBody.mass / rigidbody.mass;
+                    joint.connectedMassScale = 1f;
+                }
+            }
         }
     }
 }
