@@ -180,6 +180,12 @@ public class MenuBehavior : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    /*
     // Method to handle main menu button click
     public void MainMenuButton()
     {
@@ -199,7 +205,7 @@ public class MenuBehavior : MonoBehaviour
             Debug.Log("Main Camera NOT Found");
         }
     }
-
+    */
 }
 
 

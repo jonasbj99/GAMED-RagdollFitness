@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,12 @@ public class StrengthBar : MonoBehaviour
 
     [SerializeField] AudioSource rankAudio;
 
+    float gameTimer = 0;
+    bool gameFinished = false;
+    [SerializeField] TMP_Text timerText;
+    [SerializeField] TMP_Text finishTimerText;
+    [SerializeField] GameObject finishScreen;
+
     public static int currentStrength;
     int startStrength = 0;
     int maxStrength = 10;
@@ -29,24 +36,49 @@ public class StrengthBar : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            currentStrength += 3;
+        }
+
+        /*
+        timerText.text = gameTimer.ToString("00:00.00");
+
         if (currentStrength >= maxStrength)
         {
             rankUp();
         }
+        */
 
-        //if (Input.GetKeyDown(KeyCode.Space)) 
+        //SetSlider();
+
+        //weightSprite.transform.position = weightFollow.transform.position;
+
+        if (!gameFinished)
         {
-            // currentStrength += 7;
+            if (currentStrength >= maxStrength)
+            {
+                rankUp();
+            }
+
+            SetSlider();
+
+            gameTimer += Time.deltaTime;
+        }
+        else if (gameFinished)
+        {
+            finishTimerText.text = timerText.text;
+            finishScreen.SetActive(true);
         }
 
-        SetSlider();
-
         weightSprite.transform.position = weightFollow.transform.position;
+
+        timerText.text = gameTimer.ToString("00:00.00");
     }
 
     void rankUp()
     {
-        if (currentRank < 10)
+        if (currentRank < 9)
         {
             currentRank += 1;
             currentStrength -= maxStrength;
@@ -55,6 +87,10 @@ public class StrengthBar : MonoBehaviour
             rankChange();
             adjustScale(); // Call method to adjust scale of game objects
             rankAudio.Play();
+        } else if (currentRank == 9) {
+            currentRank = 10;
+            rankChange();
+            gameFinished = true;
         }
     }
 
