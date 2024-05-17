@@ -28,6 +28,12 @@ public class StrengthBar : MonoBehaviour
     int maxStrength = 10;
     int currentRank = 1;
 
+    bool showIntro = true;
+    [SerializeField] GameObject activeQuote;
+    [SerializeField] SpriteRenderer activeQuoteSprite;
+    [SerializeField] Sprite[] spriteArray;
+    [SerializeField] Animator quoteAnimator;
+
     private void Start()
     {
         currentStrength = startStrength;
@@ -79,6 +85,12 @@ public class StrengthBar : MonoBehaviour
         weightSprite.transform.position = weightFollow.transform.position;
 
         timerText.text = gameTimer.ToString("00:00.00");
+
+        if (showIntro && currentStrength > 0)
+        {
+            showIntro = false;
+            StartCoroutine(RemoveIntro());
+        }
     }
 
     public void HighscoreUpdate()
@@ -125,6 +137,8 @@ public class StrengthBar : MonoBehaviour
         }
 
         rankArray[currentRank - 1].SetActive(true);
+
+        StartCoroutine(DisplayQuote());
     }
 
     void SetSlider()
@@ -157,4 +171,31 @@ public class StrengthBar : MonoBehaviour
         }
     }
 
+    IEnumerator DisplayQuote()
+    {
+        activeQuoteSprite.sprite = spriteArray[currentRank - 2];
+        quoteAnimator.Play("Base Layer.quoteIn", 0, 0);
+        activeQuote.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        quoteAnimator.Play("Base Layer.quoteIdle", 0, 0);
+
+        yield return new WaitForSeconds(5);
+
+        quoteAnimator.Play("Base Layer.quoteOut", 0, 0);
+
+        yield return new WaitForSeconds(2);
+
+        activeQuote.GetComponent<Animator>().Play("Base Layer.quoteOutIdle", 0, 0);
+    }
+
+    IEnumerator RemoveIntro()
+    {
+        quoteAnimator.Play("Base Layer.quoteOut", 0, 0);
+
+        yield return new WaitForSeconds(2);
+
+        activeQuote.GetComponent<Animator>().Play("Base Layer.quoteOutIdle", 0, 0);
+    }
 }
