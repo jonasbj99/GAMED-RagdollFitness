@@ -69,6 +69,9 @@ public class StrengthBar : MonoBehaviour
         {
             finishTimerText.text = timerText.text;
             finishScreen.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
         }
 
         weightSprite.transform.position = weightFollow.transform.position;
