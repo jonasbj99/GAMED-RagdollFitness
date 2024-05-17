@@ -20,6 +20,7 @@ public class StrengthBar : MonoBehaviour
     bool gameFinished = false;
     [SerializeField] TMP_Text timerText;
     [SerializeField] TMP_Text finishTimerText;
+    [SerializeField] TMP_Text highscoreTimerText;
     [SerializeField] GameObject finishScreen;
 
     public static int currentStrength;
@@ -68,6 +69,7 @@ public class StrengthBar : MonoBehaviour
         else if (gameFinished)
         {
             finishTimerText.text = timerText.text;
+            HighscoreUpdate();
             finishScreen.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -77,6 +79,24 @@ public class StrengthBar : MonoBehaviour
         weightSprite.transform.position = weightFollow.transform.position;
 
         timerText.text = gameTimer.ToString("00:00.00");
+    }
+
+    public void HighscoreUpdate()
+    {
+        if (PlayerPrefs.HasKey("SavedHighscore"))
+        {
+            if (gameTimer > PlayerPrefs.GetFloat("SavedHighscore"))
+            {
+                PlayerPrefs.SetFloat("SavedHighscore", gameTimer);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("SavedHighscore", gameTimer);
+        }
+
+        // finalScoreText.text = gameTimer.ToString();
+        highscoreTimerText.text = PlayerPrefs.GetFloat("SavedHighscore").ToString();
     }
 
     void rankUp()
