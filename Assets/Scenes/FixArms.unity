@@ -24182,7 +24182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1107863273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45812,6 +45812,7 @@ MonoBehaviour:
   rankAudio: {fileID: 2056090599}
   timerText: {fileID: 0}
   finishTimerText: {fileID: 0}
+  highscoreTimerText: {fileID: 0}
   finishScreen: {fileID: 0}
 --- !u!114 &1967148303
 MonoBehaviour:
