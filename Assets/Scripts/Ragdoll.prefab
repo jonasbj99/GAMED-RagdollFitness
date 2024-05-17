@@ -256,6 +256,10 @@ MonoBehaviour:
   strafeSpeed: 50
   jumpForce: 5000
   hips: {fileID: 3037551146104809791}
+  raycastDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isGrounded: 0
 --- !u!114 &2129808666507749019
 MonoBehaviour:
@@ -269,7 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
 --- !u!114 &3384544083051309174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &6661344966611247306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!1 &1517050131598167417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &7645094812335022788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1469,7 +1469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &1815924018811103409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1485,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   isLeftorRight: 1
   alreadyGrabbing: 0
+  rightGrab: 0
+  canGrab: 1
 --- !u!1 &1850818117169772517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &2505798625955739698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &6318023019077784810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2269,7 +2268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &1488866686397059817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2535,7 +2533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!1 &3100839456837204164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +2643,12 @@ MonoBehaviour:
   stomachOffset: 0
   hipJoint: {fileID: 4448864314567825207}
   stomachJoint: {fileID: 5432885705463843185}
+  leftShoulder: {fileID: 0}
+  rightShoulder: {fileID: 0}
+  minRotationX: 0
+  maxRotationX: 1
+  minRotationY: 45
+  maxRotationY: 60
 --- !u!1 &3319255520109425233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,7 +2931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &5439549392366128137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,6 +2947,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   isLeftorRight: 0
   alreadyGrabbing: 0
+  rightGrab: 0
+  canGrab: 1
 --- !u!1 &3642474166133736424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,7 +3200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!1 &3730021287915530739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,7 +3449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!1 &4380308707080141340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,7 +3759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &7860011695701833642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4023,7 +4024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!1 &8178039029521737304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4274,7 +4274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
 --- !u!114 &1257408250081982165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4538,4 +4537,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d9739ef862d794ca1189f3a4451add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8497910969739430675}
