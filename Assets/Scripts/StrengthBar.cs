@@ -85,7 +85,7 @@ public class StrengthBar : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("SavedHighscore"))
         {
-            if (gameTimer > PlayerPrefs.GetFloat("SavedHighscore"))
+            if (gameTimer < PlayerPrefs.GetFloat("SavedHighscore"))
             {
                 PlayerPrefs.SetFloat("SavedHighscore", gameTimer);
             }
@@ -96,7 +96,7 @@ public class StrengthBar : MonoBehaviour
         }
 
         // finalScoreText.text = gameTimer.ToString();
-        highscoreTimerText.text = PlayerPrefs.GetFloat("SavedHighscore").ToString();
+        highscoreTimerText.text = PlayerPrefs.GetFloat("SavedHighscore").ToString("00:00.00");
     }
 
     void rankUp()

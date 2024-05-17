@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.59858525, g: 0.54324347, b: 0.7846464, a: 1}
+  m_IndirectSpecularColor: {r: 0.5984767, g: 0.54319465, b: 0.78464794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -38379,6 +38379,7 @@ MonoBehaviour:
   rankAudio: {fileID: 2091003388}
   timerText: {fileID: 1751792903}
   finishTimerText: {fileID: 292581393}
+  highscoreTimerText: {fileID: 1711339550}
   finishScreen: {fileID: 1470057984}
 --- !u!114 &1586515197
 MonoBehaviour:
