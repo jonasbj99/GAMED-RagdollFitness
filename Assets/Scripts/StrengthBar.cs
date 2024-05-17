@@ -116,7 +116,7 @@ public class StrengthBar : MonoBehaviour
         foreach (GameObject obj in scaleObjects)
         {
             Vector3 currentScale = obj.transform.localScale;
-            currentScale *= 1.03f; // Increase scale by 10%
+            currentScale *= 1.03f; // Increase scale by 3%
             obj.transform.localScale = currentScale;
 
             Rigidbody rigidbody = obj.GetComponent<Rigidbody>();
@@ -127,10 +127,11 @@ public class StrengthBar : MonoBehaviour
                 if (joint != null && joint.connectedBody != null)
                 {
                     // Adjust mass scale of the joint
-                    joint.massScale = joint.connectedBody.mass / rigidbody.mass;
-                    joint.connectedMassScale = 1f;
+                    joint.massScale *= 1.03f; // Increase mass scale by 3%
+                    joint.connectedMassScale = 1f; // Optionally adjust connected mass scale if needed
                 }
             }
         }
     }
+
 }
