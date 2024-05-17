@@ -43,24 +43,6 @@ public class StrengthBar : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            currentStrength += 3;
-        }
-
-        /*
-        timerText.text = gameTimer.ToString("00:00.00");
-
-        if (currentStrength >= maxStrength)
-        {
-            rankUp();
-        }
-        */
-
-        //SetSlider();
-
-        //weightSprite.transform.position = weightFollow.transform.position;
-
         if (!gameFinished)
         {
             if (currentStrength >= maxStrength)
@@ -84,7 +66,7 @@ public class StrengthBar : MonoBehaviour
 
         weightSprite.transform.position = weightFollow.transform.position;
 
-        timerText.text = gameTimer.ToString("00:00.00");
+        timerText.text = gameTimer.ToString("00.00"); // FORMAT !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         if (showIntro && currentStrength > 0)
         {
@@ -108,7 +90,7 @@ public class StrengthBar : MonoBehaviour
         }
 
         // finalScoreText.text = gameTimer.ToString();
-        highscoreTimerText.text = PlayerPrefs.GetFloat("SavedHighscore").ToString("00:00.00");
+        highscoreTimerText.text = PlayerPrefs.GetFloat("SavedHighscore").ToString("00.00"); // FORMAT !!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     void rankUp()
