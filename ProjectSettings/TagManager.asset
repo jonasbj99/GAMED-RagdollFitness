@@ -9,6 +9,7 @@ TagManager:
   - Barbell
   - Bell
   - Hand
+  - AI
   layers:
   - Default
   - TransparentFX
